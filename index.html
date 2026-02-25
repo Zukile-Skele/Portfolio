@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zukile Skele| Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">Zukile Skele</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="#" id="cv-trigger">My CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-kicker">My Portfolio</p>
+          <div class="hero-heading">
+            <img
+              src="images/GradPhoto.jpeg"
+              alt="Portrait of Zukile Skele"
+              class="hero-avatar"
+            >
+            <div class="hero-heading-text">
+              <h1>Hi, I am Zukile Skele</h1>
+              <h2>Software Engineer</h2>
+              <p class="hero-subtitle">
+                I am a Bachelor of Science in Information Technology graduate with a strong passion for building efficient, user-focused solutions. I enjoy turning complex problems into practical digital systems and continuously expanding my skills in modern technologies.
+              </p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn ghost">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I am a Bachelor of Science in Information Technology graduate with a strong passion for building efficient, user-focused solutions. I enjoy turning complex problems into practical digital systems and continuously expanding my skills in modern technologies.
+
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-intro">
+          These are the projects I have built or have worked on.
+        </p>
+        <!--<div class="grid projects-grid">
+          <article class="card project-card">
+            <h3>Project One</h3>
+            <p>
+              A short description of what this project does, what you learned, and
+              which technologies you used.
+            </p>
+            <p class="tags">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </p>
+            <div class="card-actions">
+              <a href="#" class="text-link">Live Demo</a>
+              <a href="#" class="text-link">Source Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Project Two</h3>
+            <p>
+              Another project that shows a different side of your skills or interests.
+            </p>
+            <p class="tags">
+              <span>Tech A</span>
+              <span>Tech B</span>
+              <span>Tech C</span>
+            </p>
+            <div class="card-actions">
+              <a href="#" class="text-link">Live Demo</a>
+              <a href="#" class="text-link">Source Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Project Three</h3>
+            <p>
+              A project that you are especially proud of or that had impact.
+            </p>
+            <p class="tags">
+              <span>Tech X</span>
+              <span>Tech Y</span>
+              <span>Tech Z</span>
+            </p>
+            <div class="card-actions">
+              <a href="#" class="text-link">Live Demo</a>
+              <a href="#" class="text-link">Source Code</a>
+            </div>
+          </article>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="grid skills-grid">
+          <div class="card skills-card">
+            <h3>Programming Languages</h3>
+            <ul class="pill-list">
+              <li>PHP</li>
+              <li>Java</li>
+              <li>C#</li>
+              <li>SQL</li>
+              <li>Javascript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+          <div class="card skills-card">
+            <h3>Frameworks</h3>
+            <ul class="pill-list">
+              <li>Laravel</li>
+              <li>ASP.Net Web Core API</li>
+              <li>React</li>
+              <li>Vue.js</li>
+              <li>Tailwind CSS</li>
+              <li>Node.js</li>
+            </ul>
+          </div>
+          <div class="card skills-card">
+            <h3>Tools</h3>
+            <ul class="pill-list">
+              <li>GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container contact-layout">
+        <div>
+          <h2>Contact Me</h2>
+          
+        </div>
+        <div class="contact-details">
+          <a href="mailto:skelezukile@gmail.com" class="contact-item">
+            <span>Email</span>
+            <span>skelezukile@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/zukile-skele" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span>
+            <span>www.linkedin.com/in/zukile-skele</span>
+          </a>
+          <a href="https://github.com/Zukile-Skele" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <span>github.com/Zukile-Skele</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p> </p>
+      <p>Built by Zukile Skele</p>
+    </div>
+  </footer>
+
+  <div id="cv-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>My CV</h2>
+      <div class="cv-container">
+      
+        <iframe src="CV/cv.pdf" width="100%" height="600px">
+          <p>Your browser does not support PDFs. <a href="CV/cv.pdf">Download the PDF</a>.</p>
+        </iframe>
+      </div>
+      <div class="modal-actions" style="margin-top: 1rem; text-align: center;">
+        <a href="CV/cv.pdf" download class="btn primary">Download CV</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+    // CV Modal LogicLog
+    const modal = document.getElementById("cv-modal");
+    const trigger = document.getElementById("cv-trigger");
+    const closeButton = document.querySelector(".close-button");
+
+    trigger.addEventListener("click", function(event) {
+      event.preventDefault();
+      modal.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
