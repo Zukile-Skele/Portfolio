@@ -484,6 +484,11 @@ img {
   animation: slideIn 0.3s ease-out;
 }
 
+#contact-modal .modal-content {
+  max-width: 760px;
+  padding: 1.6rem;
+}
+
 .modal-content h2 {
   font-size: 2rem;
   margin-top: 0;
@@ -519,6 +524,10 @@ img {
   flex: 0 0 auto;
 }
 
+.modal .contact-item .contact-modal-icon svg {
+  display: block;
+}
+
 .modal .contact-item span:nth-child(2) {
   min-width: 5rem;
 }
@@ -531,12 +540,12 @@ img {
 }
 
 .contact-modal-image {
-  max-width: 220px;
+  max-width: 250px;
 }
 
 .contact-modal-image img {
   width: 100%;
-  height: auto;
+  height: 320px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
