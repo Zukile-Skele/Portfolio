@@ -453,7 +453,7 @@ img {
   color: var(--text-soft);
   font-size: 0.85rem;
   border-top: 1px solid var(--border-subtle);
-  background: rgba(2, 6, 23, 0.8);
+  background: rgba(2, 6, 23, 0.9);
 }
 
 /* Modal Styles */
@@ -487,6 +487,65 @@ img {
 .modal-content h2 {
   font-size: 2rem;
   margin-top: 0;
+  text-align: center;
+}
+
+.modal .contact-details {
+  width: 100%;
+  gap: 0.7rem;
+}
+
+.modal a.contact-item {
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  gap: 0.75rem;
+}
+
+.modal a.contact-item:hover {
+  border-color: var(--accent);
+}
+
+.modal .contact-item .contact-modal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.18);
+  color: var(--accent-secondary);
+  flex: 0 0 auto;
+}
+
+.modal .contact-item span:nth-child(2) {
+  min-width: 5rem;
+}
+
+.contact-modal-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.contact-modal-image {
+  max-width: 220px;
+}
+
+.contact-modal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 640px) {
+  .contact-modal-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .close-button {
