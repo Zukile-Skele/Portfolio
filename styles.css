@@ -277,6 +277,14 @@ img {
   z-index: 2;
 }
 
+#about p {
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
 .section-alt {
   background: rgba(2, 6, 23, 0.5); /* Semi-transparent to show background but distinguish section */
 }
