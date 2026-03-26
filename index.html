@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zukile Skele| Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
   <header class="site-header">
@@ -12,6 +12,7 @@
       <div class="logo">Zukile Skele</div>
       <nav class="nav">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#" class="contact-open">Contact</a>
@@ -57,7 +58,28 @@
       </div>
     </section>
 
-   <!-- <section id="projects" class="section">
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <p class="section-intro">
+          A snapshot of roles and practical work I’ve done.
+        </p>
+        <div class="grid experience-grid">
+          <article class="card experience-card experience-card--laptop">
+            <p class="experience-year">2025</p>
+            <h3>Full Stack Software Development Learnership</h3>
+            <p class="experience-meta">Singular Systems</p>
+          </article>
+          <article class="card experience-card experience-card--purple">
+            <p class="experience-year">2025-2026</p>
+            <h3>Software Engineering Intern</h3>
+            <p class="experience-meta">Skills Panda</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
       <div class="container">
         <h2>Projects</h2>
         <p class="section-intro">
@@ -114,7 +136,7 @@
           </article>
         </div>
       </div> 
-    </section>  -->
+    </section>
 
     <section id="skills" class="section">
       <div class="container">
@@ -285,6 +307,54 @@
       if (cvModal && cvModal.modal.style.display === "block") cvModal.close();
       if (contactModal && contactModal.modal.style.display === "block") contactModal.close();
     });
+
+    const setupSectionHeadingAnimations = () => {
+      const headings = Array.from(document.querySelectorAll("main .section h2"));
+      if (headings.length === 0) return;
+
+      headings.forEach((heading) => heading.classList.add("section-heading"));
+
+      if (!("IntersectionObserver" in window)) {
+        const update = () => {
+          headings.forEach((heading) => {
+            const rect = heading.getBoundingClientRect();
+            const viewTop = 0;
+            const viewBottom = window.innerHeight || document.documentElement.clientHeight;
+            const triggerTop = viewTop + (viewBottom - viewTop) * 0.2;
+            const triggerBottom = viewTop + (viewBottom - viewTop) * 0.9;
+            const isActive = rect.top <= triggerBottom && rect.bottom >= triggerTop;
+            heading.classList.toggle("section-heading--in", isActive);
+          });
+        };
+
+        let rafId = 0;
+        const onScroll = () => {
+          if (rafId) return;
+          rafId = window.requestAnimationFrame(() => {
+            rafId = 0;
+            update();
+          });
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("section-heading--in", entry.isIntersecting);
+          });
+        },
+        { threshold: 0.35, rootMargin: "0px 0px -10% 0px" }
+      );
+
+      headings.forEach((heading) => observer.observe(heading));
+    };
+
+    setupSectionHeadingAnimations();
   </script>
 </body>
 </html>
