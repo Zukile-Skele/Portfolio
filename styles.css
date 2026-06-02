@@ -303,6 +303,15 @@ img {
   width: 100%;
 }
 
+#projects h2.heading-single-line {
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  font-size: clamp(24px, 6.2vw, 64px);
+}
+
 #projects h2,
 #skills h2 {
   text-align: left;
@@ -364,6 +373,10 @@ img {
   #projects h2,
   #skills h2,
   #experience h2 {
+    width: 100%;
+  }
+
+  #experience .section-intro {
     width: 100%;
   }
 }
@@ -525,8 +538,9 @@ img {
 }
 
 #experience .section-intro {
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
+  width: 40%;
 }
 
 @media (max-width: 900px) {
@@ -544,6 +558,24 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+}
+
+.project-card {
+  position: relative;
+  transition:
+    transform 180ms ease-out,
+    box-shadow 200ms ease-out,
+    border-color 200ms ease-out,
+    background 200ms ease-out;
+  will-change: transform;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px) scale(1.04);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 28px 70px rgba(6, 182, 212, 0.35), 0 18px 40px rgba(34, 197, 94, 0.25);
+  background: rgba(17, 24, 39, 0.98);
 }
 
 .project-card h3 {
