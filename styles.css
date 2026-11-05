@@ -517,6 +517,10 @@ img {
   background-image: url("images/purple-laptop.jpg");
 }
 
+.experience-card--hacker::before {
+  background-image: url("images/hacker.jpg");
+}
+
 .experience-year {
   color: var(--accent-secondary);
   font-size: 0.85rem;
@@ -558,10 +562,13 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  height: 100%;
 }
 
 .project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition:
     transform 180ms ease-out,
     box-shadow 200ms ease-out,
@@ -593,15 +600,20 @@ img {
   margin-bottom: 0.25rem;
 }
 
-.project-card p {
+.project-card p:not(.tags) {
   font-size: 0.9rem;
   color: var(--text-soft);
+  flex-grow: 1; /* Grow to fill space */
+  margin-bottom: 0; /* Remove bottom margin to let margin-top: auto on tags work better */
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  margin-top: auto; /* Pushes tags to the bottom */
+  padding-top: 1rem; /* Adds some breathing room */
+  flex-shrink: 0;
 }
 
 .tags span {
@@ -617,6 +629,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+  flex-shrink: 0;
 }
 
 .text-link {
