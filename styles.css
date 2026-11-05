@@ -883,7 +883,135 @@ img {
   to { opacity: 1; }
 }
 
-@keyframes slideIn {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.3s;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+.mobile-nav-active .hamburger { background: transparent; }
+.mobile-nav-active .hamburger::before { transform: translateY(8px) rotate(45deg); }
+.mobile-nav-active .hamburger::after { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    backdrop-filter: blur(10px);
+    background: rgba(5, 8, 22, 0.95);
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-heading {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-avatar {
+    width: 12rem;
+    height: 16rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    white-space: normal;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .projects-grid, .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 10% auto;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+  }
+
+  .cv-container {
+    height: 400px;
+  }
+
+  .contact-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-modal-image {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-avatar {
+    width: 10rem;
+    height: 13.5rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
 }
