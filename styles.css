@@ -625,11 +625,12 @@ img {
 }
 
 .card-actions {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
   flex-shrink: 0;
+  min-height: 1.25rem; /* Reserves space for links to keep tags aligned across cards */
 }
 
 .text-link {
